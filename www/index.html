@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Starcraft II Co-op Randomizer</title>
+<meta charset="utf-8">
+<meta name="title" content="Starcraft II Co-op Randomizer">
+<meta name="description" content="Picks a random commander and map for Starcraft II co-op mode.">
+<meta name="viewport" content="initial-scale=1.0">
+<link href="mailto:jcfields@jcfields.dev" rel="author" title="J.C. Fields">
+<link href="layout/manifest.json" rel="manifest" type="application/json">
+<link href="layout/style.css" media="screen" rel="stylesheet" type="text/css">
+<link href="layout/favicon.png" rel="shortcut icon" type="image/png">
+<link href="layout/homeicon.jpg" rel="apple-touch-icon-precomposed" type="image/jpeg">
+<script src="random.js" type="text/javascript"></script></head>
+<body><h1>Starcraft II Co-op Randomizer</h1>
+<noscript><p>Must have JavaScript enabled.</p></noscript>
+<main><ul id="commanders" class="list"></ul>
+<p><button type="button" id="randomize" title="Randomize [Space]">Randomize</button></p>
+<p><button type="button" title="Toggle Terran [T]" value="terran" id="terran" class="filter race"><img src="layout/icon-terran.svg" alt="Toggle Terran" class="icon"></button>
+<button type="button" title="Toggle Zerg [Z]" value="zerg" id="zerg" class="filter race"><img src="layout/icon-zerg.svg" alt="Toggle Zerg" class="icon"></button>
+<button type="button" title="Toggle Protoss [P]" value="protoss" id="protoss" class="filter race"><img src="layout/icon-protoss.svg" alt="Toggle Protoss" class="icon"></button>
+<button type="button" title="Reset [Esc]" value="commanders" class="filter reset"><img src="layout/icon-reset.svg" alt="Reset" class="icon"></button></p>
+<p id="play"></p>
+<p id="sub"></p></main>
+<div id="mapButton" class="toggle"><div><button type="button" title="Maps [M]" value="maps" class="open"><img src="layout/icon-map.svg" alt="Maps" class="icon"></button></div>
+<div id="mapOverlay" class="overlay" hidden="hidden"><div class="widgets"><button type="button" value="maps" class="close"><img src="layout/widget-close.svg" alt="Close" title="Close"></button>
+<button type="button" value="maps" class="reset"><img src="layout/widget-reset.svg" alt="Reset" title="Reset"></button></div>
+<ul id="maps" class="list"></ul></div></div>
+<div id="prestigeButton" class="toggle"><div><button type="button" title="Prestiges [G]" value="prestige" class="open"><img src="layout/icon-prestige.svg" alt="Prestiges" class="icon"></button></div>
+<div id="prestigeOverlay" class="overlay" hidden="hidden"><div class="widgets"><button type="button" value="prestige" class="close"><img src="layout/widget-close.svg" alt="Close" title="Close"></button>
+<button type="button" id="prestigeReset"><img src="layout/widget-reset.svg" alt="Reset" title="Reset"></button></div>
+<div id="prestiges"></div></div></div>
+<div id="listButton" class="toggle"><div><button type="button" title="Playlist [L]" value="list" class="open"><img src="layout/icon-list.svg" alt="Playlist" class="icon"></button></div>
+<div id="listOverlay" class="overlay" hidden="hidden"><div class="widgets"><button type="button" value="list" class="close"><img src="layout/widget-close.svg" alt="Close" title="Close"></button>
+<button type="button" id="listReset"><img src="layout/widget-reset.svg" alt="Reset" title="Reset"></button></div>
+<div id="lists"><ul id="commandersList" class="queue"></ul>
+<ul id="mapsList" class="queue"></ul></div></div></div>
+<div id="optionsButton" class="toggle"><div><button type="button" title="Options [O]" value="options" class="open"><img src="layout/icon-options.svg" alt="Options" class="icon"></button></div>
+<div id="optionsOverlay" class="overlay" hidden="hidden"><div class="widgets"><button type="button" value="options" class="close"><img src="layout/widget-close.svg" alt="Close" title="Close"></button>
+<button type="button" id="optionsReset"><img src="layout/widget-reset.svg" alt="Reset" title="Reset [D]"></button></div>
+<div><label title="Allow repeats [R]—Allows the previous commander or map to be chosen again."><input type="checkbox" id="allowRepeats">Allow repeats.</label></div>
+<div><label title="Use playlist [Q]—Picks each commander and map at least once before repeating."><input type="checkbox" id="usePlaylist">Use playlist.</label></div>
+<div><label title="Play sounds [S]—Plays a lock-in sound when a commander is chosen."><input type="checkbox" id="playSounds">Play sounds.</label></div>
+<div><label title="Adjust volume [Up or Down]">Volume: <input type="range" min="1" max="100" value="50" id="volume"></label></div></div></div>
+<footer>Created by <a href="mailto:jcfields@jcfields.dev">J.C. Fields</a>. Hosted by <a href="https://github.com/jcfieldsdev/starcraft2-coop-randomizer">GitHub</a>.</footer></body></html>

@@ -1,0 +1,677 @@
+@font-face {
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	src: url(fonts/Raleway-Regular.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: 300;
+	src: url(fonts/Raleway-Light.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: 700;
+	src: url(fonts/Raleway-Medium.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: 900;
+	src: url(fonts/Raleway-Bold.woff2) format("woff2");
+}
+
+@keyframes push {
+	50% {
+		transform: scale(0.95);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+* {
+	touch-action: manipulation;
+}
+
+a, button, label {
+	cursor: pointer;
+}
+
+a#abathur {
+	background-image: url(portraits/abathur.jpg);
+}
+
+a#alarak {
+	background-image: url(portraits/alarak.jpg);
+}
+
+a#artanis {
+	background-image: url(portraits/artanis.jpg);
+}
+
+a#dehaka {
+	background-image: url(portraits/dehaka.jpg);
+}
+
+a#fenix {
+	background-image: url(portraits/fenix.jpg);
+}
+
+a#han {
+	background-image: url(portraits/han.jpg);
+}
+
+a#karax {
+	background-image: url(portraits/karax.jpg);
+}
+
+a#kerrigan {
+	background-image: url(portraits/kerrigan.jpg);
+}
+
+a#mengsk {
+	background-image: url(portraits/mengsk.jpg);
+}
+
+a#niadra {
+	background-image: url(portraits/niadra.jpg);
+}
+
+a#nova {
+	background-image: url(portraits/nova.jpg);
+}
+
+a#raynor {
+	background-image: url(portraits/raynor.jpg);
+}
+
+a#reigel {
+	background-image: url(portraits/reigel.jpg)
+}
+
+a#selendis {
+	background-image: url(portraits/selendis.jpg);
+}
+
+a#stetmann {
+	background-image: url(portraits/stetmann.jpg);
+}
+
+a#stukov {
+	background-image: url(portraits/stukov.jpg);
+}
+
+a#swann {
+	background-image: url(portraits/swann.jpg);
+}
+
+a#tosh {
+	background-image: url(portraits/tosh.jpg);
+}
+
+a#tychus {
+	background-image: url(portraits/tychus.jpg);
+}
+
+a#vorazun {
+	background-image: url(portraits/vorazun.jpg);
+}
+
+a#warfield {
+	background-image: url(portraits/warfield.jpg);
+}
+
+a#zagara {
+	background-image: url(portraits/zagara.jpg);
+}
+
+a#zeratul {
+	background-image: url(portraits/zeratul.jpg);
+}
+
+body {
+	background: #000 linear-gradient(to bottom right, #000, #000040) fixed;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+body, html, main {
+	height: 100%;
+}
+
+button {
+	background: #808080 linear-gradient(#808080, #c0c0c0);
+	border-color: #c0c0c0 #808080 #808080 #c0c0c0;
+	border-radius: 0.25em;
+	border-style: solid;
+	border-width: 2px;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 700;
+}
+
+div#listButton button.open:active img {
+	transform: scaleY(0.05);
+}
+
+div#mapButton button.open:active img,
+div#prestigeButton button.open:active img {
+	transform: scaleX(0.05);
+}
+
+div#optionsButton button.open:active img {
+	transform: rotate(90deg);
+}
+
+button#protoss {
+	background: #2040c0 linear-gradient(#2040c0, #4080ff);
+	border-color: #4080ff #2040c0 #2040c0 #4080ff;
+}
+
+button#randomize {
+	background: #ff8040 linear-gradient(#ff8040, #ffc000);
+	border-color: #ffc000 #ff8040 #ff8040 #ffc000;
+	margin-top: 1em;
+	padding: 0.5em 2em;
+}
+
+button#randomize, div.toggle, noscript, p#play {
+	font-size: 2rem;
+}
+
+button#terran {
+	background: #208040 linear-gradient(#208040, #40c080);
+	border-color: #40c080 #208040 #208040 #40c080;
+}
+
+button#zerg {
+	background: #804080 linear-gradient(#804080, #c080c0);
+	border-color: #c080c0 #804080 #804080 #c080c0;
+}
+
+button.filter {
+	font-size: 1.25rem;
+	padding: 0.5em;
+}
+
+div#listButton {
+	left: calc(100px + 2em);
+	z-index: 3;
+}
+
+div#lists {
+	display: flex;
+	padding: 0.5em 0.5em 0 0;
+}
+
+div#mapButton {
+	left: 0;
+}
+
+div#mapButton, div#optionsButton {
+	z-index: 5;
+}
+
+div#optionsButton {
+	right: 0;
+}
+
+div#prestigeButton {
+	left: calc(50px + 1em);
+	z-index: 4;
+}
+
+div#prestiges {
+	display: flex;
+	flex-wrap: wrap;
+	line-height: 100%;
+	width: 21.25em;
+}
+
+div.overlay {
+	background: #000;
+	border: 1px solid #fff;
+	border-radius: 0.75em;
+	color: inherit;
+	padding: 0.75em;
+	position: relative;
+}
+
+div.overlay ul a {
+	background: none;
+	color: inherit;
+	text-decoration: none;
+}
+
+div.overlay ul a.disabled, label.disabled {
+	background: none;
+	color: #808080;
+	text-decoration: line-through;
+}
+
+div.prestiges {
+	font-size: 0.75rem;
+	text-align: center;
+}
+
+div.prestiges ul {
+	display: flex;
+	flex-direction: column;
+}
+
+div.prestiges ul button {
+	border: 1px solid #fff;
+	height: 4em;
+	margin: 0.25em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 8.5em;
+}
+
+div.prestiges ul button.disabled {
+	background: none;
+	border-color: #808080;
+	color: #808080;
+}
+
+div.prestiges ul li {
+	height: 4.5em;
+	width: 9em;
+}
+
+div.toggle {
+	bottom: 0;
+	line-height: 150%;
+	padding: 0.5em;
+	position: fixed;
+}
+
+div.toggle button {
+	background: none;
+	border: 0;
+	color: inherit;
+}
+
+div.widgets {
+	position: absolute;
+	right: 0.5em;
+	top: 0.5em;
+	width: 25px;
+}
+
+div.widgets button {
+	padding: 0;
+}
+
+div.widgets img {
+	height: 25px;
+	width: 25px;
+}
+
+footer {
+	background: none;
+	bottom: 0;
+	color: #0040c0;
+	font-size: 0.75rem;
+	left: 50%;
+	padding-bottom: 2em;
+	position: fixed;
+	text-align: center;
+	transform: translateX(-50%);
+	white-space: nowrap;
+	z-index: 1;
+}
+
+footer a {
+	background: none;
+	color: inherit;
+	font-weight: 900;
+}
+
+footer a:hover, footer a:active {
+	background: none;
+	color: #fff;
+}
+
+h1, input[type="checkbox"], ul#commanders span {
+	display: none;
+}
+
+html {
+	font: 10pt/200% Raleway, Verdana, sans-serif;
+	padding: 0;
+}
+
+img.icon {
+	height: 50px;
+	width: 50px;
+}
+
+input[type="range"] {
+	background: transparent;
+	color: #fff;
+	width: 12em;
+	-webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+	outline: 0;
+}
+
+input[type="range"]::-moz-range-thumb {
+	background: #c0c0c0 linear-gradient(#c0c0c0, #fff);
+	border-color: #fff #c0c0c0 #c0c0c0 #fff;
+	border-radius: 0.25em;
+	border-width: 1px;
+	height: 2.5em;
+	width: 1em;
+}
+
+input[type="range"]::-moz-range-track {
+	background: #2040c0 linear-gradient(#2040c0, #4080ff);
+	border-radius: 0.25em;
+	height: 1em;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	background: #2040c0 linear-gradient(#2040c0, #4080ff);
+	border-radius: 0.25em;
+	height: 1em;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	background: #c0c0c0 linear-gradient(#c0c0c0, #fff);
+	border-color: #fff #c0c0c0 #c0c0c0 #fff;
+	border-radius: 0.25em;
+	border-style: solid;
+	border-width: 1px;
+	height: 2.5em;
+	margin-top: -0.75em;
+	width: 1em;
+	-webkit-appearance: none;
+}
+
+label, ul#maps a {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+main {
+	box-sizing: border-box;
+	padding: 5%;
+}
+
+main button {
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}
+
+main button:active {
+	animation: push 0.3s ease;
+}
+
+main p {
+	margin: 0;
+	padding: 1em;
+	text-align: center;
+}
+
+main p, ul#commanders {
+	position: relative;
+	z-index: 2;
+}
+
+noscript {
+	text-align: center;
+}
+
+p#play {
+	font-weight: 300;
+	height: 1em;
+	margin: 2em 0 0;
+	padding: 0.25em 0;
+}
+
+p#sub {
+	font-size: 1.5rem;
+	font-weight: 900;
+	margin: 0 0 4em;
+	padding: 0.25em 0 4em;
+}
+
+span.name {
+	font-weight: 700;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#commanders {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+ul#commanders a {
+	background-size: 150px 200px;
+	border: 2px solid #ff8040;
+	border-radius: 2em;
+	display: block;
+	height: 200px;
+	margin: 0.5em;
+	transition: 0.3s border-color, 0.2s opacity, 0.4s box-shadow;
+	width: 150px;
+}
+
+ul#commanders a.active {
+	box-shadow: 0 0 32px;
+	color: #ffe000;
+}
+
+ul#commanders a:hover {
+	border-color: #ffc000;
+}
+
+ul#commanders a.disabled {
+	border-color: #808080;
+	opacity: 0.25;
+}
+
+ul#commanders a.disabled:hover {
+	border-color: #fff;
+}
+
+ul#commanders.playlist a {
+	border-color: #804080;
+}
+
+ul#commanders.playlist a.active {
+	color: #dfbfdf;
+}
+
+ul#commanders.playlist a:hover {
+	border-color: #c0a0c0;
+}
+
+ul#commanders.repeats a {
+	border-color: #40a0ff;
+}
+
+ul#commanders.repeats a.active {
+	color: #bfdfff;
+}
+
+ul#commanders.repeats a:hover {
+	border-color: #dfefff;
+}
+
+ul#commandersList {
+	border-right: 1px solid #fff;
+}
+
+ul#commandersList li {
+	width: 6em;
+}
+
+ul#mapsList li {
+	width: 8em;
+}
+
+ul.queue {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 1rem;
+	line-height: 150%;
+	padding: 0;
+	width: 26em;
+}
+
+ul.queue li {
+	display: block;
+	height: 4em;
+	margin: 0.25em;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+	text-overflow: ellipsis;
+}
+
+ul.queue li.disabled {
+	background: none;
+	color: #404040;
+}
+
+@media (min-width: 568px) and (max-width: 1440px) {
+	html {
+		font-size: 9pt;
+	}
+
+	main {
+		padding: 2.5%;
+	}
+
+	ul#commanders a {
+		background-size: 100px 133px;
+		border-radius: 1.5em;
+		height: 133px;
+		width: 100px;
+	}
+
+	@media (max-height: 768px) {
+		div.overlay ul {
+			column-count: 2;
+		}
+	}
+}
+
+@media (min-width: 320px) and (max-width: 568px) {
+	div#listButton {
+		bottom: calc(60px + 2em);
+	}
+
+	div#listButton, div#prestigeButton {
+		left: 0;
+	}
+
+	div#prestigeButton {
+		bottom: calc(30px + 1em);
+	}
+
+	div#prestiges {
+		width: 15em;
+	}
+
+	div.prestiges {
+		font-size: 0.5rem;
+	}
+
+	div.widgets img {
+		height: 20px;
+		width: 20px;
+	}
+
+	footer {
+		display: none;
+	}
+
+	html {
+		font-size: 8pt;
+	}
+
+	img.icon {
+		height: 30px;
+		width: 30px;
+	}
+
+	input[type="range"] {
+		width: 8em;
+	}
+
+	main {
+		padding: 2.5%;
+	}
+
+	p#play {
+		line-height: 150%;
+	}
+
+	ul#commanders a {
+		background-size: 75px 100px;
+		border-radius: 1em;
+		border-width: 1px;
+		height: 100px;
+		width: 75px;
+	}
+
+	ul.queue {
+		font-size: 0.75rem;
+	}
+
+	@media (max-height: 320px) {
+		div.overlay ul {
+			column-count: 2;
+		}
+	}
+}
+
+@media (max-height: 768px) {
+	footer {
+		display: none;
+	}
+
+	html {
+		font-size: 7pt;
+	}
+}
+
+@media (orientation: portrait) {
+	div#lists {
+		flex-direction: column;
+	}
+
+	ul#commandersList {
+		border-bottom: 1px solid #fff;
+		border-right: 0;
+	}
+
+	ul#mapsList {
+		margin-top: 1em;
+	}
+
+	ul.queue {
+		padding: 1em 0;
+	}
+}

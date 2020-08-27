@@ -1,0 +1,13 @@
+{
+	"name": "Starcraft II Co-op Randomizer",
+	"short_name": "Co-op Random",
+	"description": "Picks a random commander and map for Starcraft II co-op mode.",
+	"background_color": "#000000",
+	"display": "standalone",
+	"start_url": "..",
+	"icons": [{
+		"src": "homeicon.jpg",
+		"sizes": "256x256",
+		"type": "image/jpeg"
+	}]
+}
